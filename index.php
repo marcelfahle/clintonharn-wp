@@ -10,8 +10,8 @@
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage Clinton_Harn
+ * @since Clinton Harn 0.1
  */
 
 get_header(); ?>
