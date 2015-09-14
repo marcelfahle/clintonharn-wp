@@ -78,7 +78,8 @@ function twentyfifteen_setup() {
 	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 825, 510, true );
+	//set_post_thumbnail_size( 825, 510, true );
+	set_post_thumbnail_size( 780, 240, true );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -332,6 +333,18 @@ function twentyfifteen_search_form_modify( $html ) {
 	return str_replace( 'class="search-submit"', 'class="search-submit screen-reader-text"', $html );
 }
 add_filter( 'get_search_form', 'twentyfifteen_search_form_modify' );
+
+
+function add_slug_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+	return $classes;
+}
+
+add_filter( 'body_class', 'add_slug_body_class' );
+
 
 /**
  * Implement the Custom Header feature.

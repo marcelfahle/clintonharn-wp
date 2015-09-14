@@ -994,7 +994,11 @@ img.aligncenter {
 	width: 100%;
 	background: #3a3a3c;
 }
+
 .site-header > .aspect {
+	padding-bottom: 28.125%;
+}
+body.home .site-header > .aspect {
 	padding-bottom: 56.25%;
 }
 body .site-header .feature {
@@ -1012,23 +1016,37 @@ body.home .site-header .feature {
 	background: #3a3a3c url('images/header-home.jpg') top center no-repeat;
 	background-size: cover;
 }
+body.single.single-post .site-header .feature {
+	background: #3a3a3c url('images/header-blog.jpg') top center no-repeat;
+	background-size: cover;
+}
+body.page.page-about .site-header .feature {
+	background: #3a3a3c url('images/header-about.jpg') top center no-repeat;
+	background-size: cover;
+}
 
-body.home .site-header .site-branding .site-title  {
+body .site-header .site-branding .site-title  {
 	display: inline-block;
 	margin: 0 auto;
 	margin-top: 18px;
 	width: 100px;
 	height: 100px;
 	
-	background: transparent url('images/ch-logo') top center no-repeat;	
+	background: transparent url('images/ch-logo.png') top center no-repeat;	
 	background-size: cover;
 }
-body.home .site-header .site-branding .site-title a {
+body .site-header .site-branding .site-title a {
 	text-indent: -9999em;
 	display: inline-block;
 	width: 100%;
 	height: 100%;
 }
+body .site-header .feature .scroll-down {
+	display: none !important;
+
+}
+
+
 
 /**
  * 11.0 Widgets
@@ -1251,6 +1269,10 @@ body.home .site-header .site-branding .site-title a {
 /**
  * 12.0 Content
  */
+.site-main {
+ 	padding-top: 60px;
+ 	padding-bottom: 60px;
+}
 
 
 
@@ -1262,15 +1284,33 @@ body.home .site-header .site-branding .site-title a {
 .hentry {
 	// background-color: #fff;
 	text-align: center;
-	padding-top: 7.6923%;
+
+	//padding-top: 7.6923%;
+	padding-top: 40px;
 	position: relative;
+	max-width: 960px;
+	margin: 0 auto;
+	padding-bottom: 40px;
 
 }
 .entry-content{
 	p {
-		text-align: center;
+		text-align: justify;
   	margin: 0 auto;
   	width: 80%;
+  	font-size: 16px;
+		font-family: 'Open Sans', sans-serif;
+		color: #58585a;
+		a.more-link {
+			display: inline-block;
+			position: absolute;
+	    left: 50%;
+	    margin-top: 50px; 
+	    margin-right: -50%;
+	    transform: translate(-50%, -50%);
+		}
+
+
 	}
 }
 
@@ -1284,7 +1324,7 @@ body.home .site-header .site-branding .site-title a {
 }
 
 .hentry + .hentry {
-	border-top: 1px solid rgba(51, 51, 51, 0.1);
+	//border-top: 1px solid rgba(51, 51, 51, 0.1);
 }
 
 .post-thumbnail {
@@ -1328,7 +1368,7 @@ a.post-thumbnail:focus {
 .entry-title {
 	font-size: 26px;
 	font-size: 2.6rem;
-	
+	position: relative;
 	//margin-bottom: 0.9231em;
 	
 	text-decoration: none;
@@ -1346,6 +1386,7 @@ a.post-thumbnail:focus {
 		color: #58585a;
 		text-decoration: none;
 	}
+
 	.share-post {
 		float: right;
 		font-size: 18px;
@@ -1358,6 +1399,18 @@ a.post-thumbnail:focus {
 		}
 
 	}
+}
+.entry-title:after{ 
+  content: 'x'; 
+  margin:0; 
+  padding: 4px;
+  position: absolute;
+  font-size: 8px;
+  left: 50%;
+  margin-left: -7px;
+  bottom: -16px;
+  font-weight: 400;
+  
 }
 
 .entry-content,
@@ -1590,6 +1643,7 @@ a.post-thumbnail:focus {
 	font-size: 1.2rem;
 	line-height: 1.5;
 	padding: 3.8461% 7.6923%;
+	display: none;
 }
 
 .entry-footer a {
@@ -2519,6 +2573,20 @@ p > video {
 		line-height: 50px;
 		letter-spacing: 4px;
 
+	}
+
+	// scroll button
+	body .site-header .feature .scroll-down {
+		position: absolute;
+		display: inline-block !important;
+		width: 141px;
+		height: 46px;
+		bottom: 20px;
+		left: 50%;
+		margin-left: -70.5px;
+		text-indent: -9999em;
+		background: transparent url('images/scroll-down.png') top center no-repeat;	
+		background-size: cover;
 	}
 
 	/* Footer  */

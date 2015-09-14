@@ -10,8 +10,39 @@
 	$("a[href=#menu-expand]").click(function(e) {
      $(".main-menu").toggleClass("menu-open");
       e.preventDefault();
-      
    });
+
+
+	 function pulse() {
+      if ($(window).scrollTop() <= 50) {
+        $('.scroll-down').delay(200).fadeOut('slow').delay(50).fadeIn('slow', pulse);
+      }
+      else {
+      }
+    }
+    // TODO: trigger this with initial dealy, so it doesn't pulse right away
+    //pulse();
+    setTimeout(pulse, 5000)
+    $(window).scroll(function(){              
+      if ($(this).scrollTop() > 50) {
+				$('.scroll-down').clearQueue();
+         $('.scroll-down').fadeOut("slow");
+      } else {
+      	// TODO: trigger this with initial dealy, so it doesn't pulse right away
+      	setTimeout(pulse, 5000)
+        //pulse();
+      } 
+    }); 
+    $('.scroll-down').on('click', function(e) {
+    	e.preventDefault();
+    	$('html, body').animate({
+         scrollTop: $('.feature').height()-50 + 'px'
+       }, 'slow');
+       return this;
+    });
+
+
+
 	// /**
 	//  * @summary Add or remove ARIA attributes.
 	//  * Uses jQuery's width() function to determine the size of the window and add

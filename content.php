@@ -11,10 +11,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		// Post thumbnail.
-		twentyfifteen_post_thumbnail();
-	?>
+	
 
 	<header class="entry-header">
 		<?php
@@ -26,12 +23,17 @@
 		?>
 		
 		<p class="post-meta">
-			<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<span class="edit-link">', '</span>' ); ?>
+			<!-- <?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<span class="edit-link">', '</span>' ); ?> //-->
 			<?php mf_entry_date(); ?> 
 			- By Clinton	
 		</p>
 		
 	</header><!-- .entry-header -->
+
+	<?php
+		// Post thumbnail.
+		twentyfifteen_post_thumbnail();
+	?>
 
 	<div class="entry-content">
 		<?php

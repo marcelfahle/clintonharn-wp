@@ -18,7 +18,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	
+
 	<!--[if lt IE 9]>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
@@ -59,14 +59,20 @@
 			</div><!-- .site-branding -->
 			
 				
+			<?php
+				if ( is_front_page() && is_home() ) : ?>
+				<div class="reel-feature">
+					<?php
+						$page = get_page_by_title( 'Reel Feature' );
+						$content = apply_filters('the_content', $page->post_content); 
+						echo $content;
+					?>
+				</div>
+
 			
-			<div class="reel-feature">
-				<?php
-					$page = get_page_by_title( 'Reel Feature' );
-					$content = apply_filters('the_content', $page->post_content); 
-					echo $content;
+					<a href="#" class="scroll-down">Scroll down</a>
+				<?php endif;
 				?>
-			</div>
 			
 		</div><!-- .feature //-->
 			

@@ -1,14 +1,12 @@
+<?php /* Template Name: About */ ?>
 <?php
 /**
- * The template for displaying pages
+ * The template for displaying the about page
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage Clinton_Harn
+ * @since Clinton Harn 0.1
  */
 
 get_header(); ?>
@@ -21,7 +19,7 @@ get_header(); ?>
 		while ( have_posts() ) : the_post();
 
 			// Include the page content template.
-			get_template_part( 'content', 'page' );
+			get_template_part( 'content', 'about' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
