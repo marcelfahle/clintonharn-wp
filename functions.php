@@ -80,6 +80,7 @@ function twentyfifteen_setup() {
 	add_theme_support( 'post-thumbnails' );
 	//set_post_thumbnail_size( 825, 510, true );
 	set_post_thumbnail_size( 780, 240, true );
+	add_image_size( 'about-size', 300, 9999 );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -344,6 +345,42 @@ function add_slug_body_class( $classes ) {
 }
 
 add_filter( 'body_class', 'add_slug_body_class' );
+
+
+
+
+
+function my_mce_buttons_2( $buttons ) {
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+// Register our callback to the appropriate filter
+add_filter('mce_buttons_2', 'my_mce_buttons_2');
+
+function my_mce_before_init_insert_formats( $init_array ) {  
+	// Define the style_formats array
+	$style_formats = array(  
+		// Each array child is a format with it's own settings
+		array(  
+			'title' => '.product-link',  
+			'block' => 'div',  
+			'classes' => 'product-link',
+			'wrapper' => true,
+			
+		),  
+		
+	);  
+	// Insert the array, JSON ENCODED, into 'style_formats'
+	$init_array['style_formats'] = json_encode( $style_formats );  
+	
+	return $init_array;  
+  
+} 
+// Attach callback to 'tiny_mce_before_init' 
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );  
+
+
+
 
 
 /**

@@ -9,7 +9,14 @@
  * @since Clinton Harn 0.1
  */
 ?>
-
+		<div class="social">
+			<h2>Follow me</h2>
+			<ul>
+				<li><a href="https://vimeo.com/clintonharn" title="Clinton Harn on Vimeo" target="_blank"><i class="fa fa-3x fa-vimeo"></i></a></li>
+				<li><a href="https://twitter.com/clintonharn" title="Follow Clinton Harn on Twitter" target="_blank"><i class="fa fa-3x fa-twitter"></i></a></li>
+				<li><a href="https://instagram.com/clintonharn/" title="Clinton Harn on Instagram" target="_blank"><i class="fa fa-3x fa-instagram"></i></a></li>
+			</ul>
+		</div>
 	</div><!-- .site-content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
