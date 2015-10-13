@@ -60,8 +60,8 @@
 						</a>
 					</li>
 					<li>
-						<a href="http://paglink.com/" target="_blank">
-							<img src="<?php bloginfo('template_directory'); ?>/images/logo-paglink.png" alt="PAGlink" width="140" height="36" />
+						<a href="http://www.zeiss.com/camera-lenses/en_de/home.html" target="_blank">
+							<img src="<?php bloginfo('template_directory'); ?>/images/logo-zeiss.png" alt="Carl Zeiss" width="80" height="62" />
 						</a>
 					</li>
 					<li>

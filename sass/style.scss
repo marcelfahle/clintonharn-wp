@@ -50,6 +50,7 @@ Text Domain: clintonharn
  */
 $textgray: #58585a;
 $orange: #ef8d3e;
+$lightblue: #65bde7;
 
 
 
@@ -366,6 +367,7 @@ big {
 .more-link,
 .reel-feature a,
 .btn,
+.linklist ul li > a:last-child,
 .entry-content .product-link  a {
 	text-decoration: none;
 	font-size: 13px;
@@ -377,9 +379,29 @@ big {
 	padding: 4px 28px 5px 28px;
 	border: none !important;
 }
+.more-link:link, .more-link:visited,
+.reel-feature a:link, .reel-feature a:visited,
+.btn:link, .btn:visited,
+.linklist ul li > a:last-child:link, .linklist ul li > a:last-child:visited,
+.entry-content .product-link  a:link, .entry-content .product-link  a:visited {
+	background: #f08d47;
+}
+.more-link:hover, .more-link:active,
+.reel-feature a:hover, .reel-feature a:active,
+.btn:hover, .btn:active,
+.linklist ul li > a:last-child:hover, .linklist ul li > a:last-child:active,
+.entry-content .product-link  a:hover, .entry-content .product-link  a:active {
+	background: #65bde7;
+}
 .more-link {
 	display: inline-block;
 	margin-top: 28px;
+	position: relative;
+	left: 50%;
+	width: 220px;
+	margin-left: -110px;
+	text-align: center;
+
 }
 
 
@@ -1034,6 +1056,10 @@ body.page.page-gear .site-header .feature {
 	background: #3a3a3c url('images/header-testimonials.jpg') top center no-repeat;
 	background-size: cover;
 }
+body.page.page-reviews .site-header .feature {
+	background: #3a3a3c url('images/header-reviews.jpg') top center no-repeat;
+	background-size: cover;
+}
 
 body .site-header .site-branding .site-title  {
 	display: inline-block;
@@ -1317,15 +1343,33 @@ body .site-header .feature .scroll-down {
 		text-align: justify;
   	margin: 0 auto;
   	max-width: 80%;
+  	margin-bottom: 20px;
   	//width: 48.75em;
   	width: auto;
   	font-size: 16px;
 		font-family: 'Open Sans', sans-serif;
 		color: #58585a;
+		> a {
+			border: none;
+			text-decoration: none;
+			color: $orange;
+			&:link, &:visited {
+
+			}
+			&:hover, &:active {
+				color: $lightblue;
+			}
+		}
+		a.btn:link, a.btn:visited, a.btn:hover, a.btn-link:active,
+		a.more-link:link, a.more-link:visited, a.more-link:hover, a.more-link:active {
+			color: #fff;
+		}
 		a.more-link {
 			display: inline-block;
 			
 		}
+
+
 		> img {
 			// retina
 			//max-width: 50%;
@@ -1345,8 +1389,14 @@ body .site-header .feature .scroll-down {
 	margin-bottom: 48px;
 
 }
+article:last-child .entry-content {
+
+	padding-bottom: 38px;
+	background: transparent url('images/underline-dotted.png') bottom center no-repeat;
+	background-size: 100% auto;
+}
 body.home .entry-content p:last-child {
-	text-align: center;
+	//text-align: center;
 }
 body.page-about .entry-content {
 	margin-top: -34px;
@@ -1429,7 +1479,7 @@ body.page-testimonials .entry-content, body.page-gear .entry-content  {
 	}
 	p > img {
 		margin-top: 0;
-		margin-bottom: 100px;
+		margin-bottom: 40px;
 	}
 	
 }
@@ -1449,9 +1499,81 @@ body.page-testimonials .entry-content, body.page-gear .entry-content  {
 	}
 
 }
-body.page-testimonials .entry-content::after,
+body .site-content .entry-content,
+body.page-testimonials .entry-content,
+body.page-gear .entry-content {
+	p > img {
+		margin-bottom: 10px;
+	}
+	h2 {
+		padding-bottom: 10px;
+		letter-spacing: 1.5px;
+	}
+	h2 + h3 {
+		letter-spacing: 0.8px;
+	}
+}
+.linklist .linklistcatname {
+	visibility: hidden;
+}
+.linklist .linklistcatname::after {
+	content: "Gear in the Video";
+	visibility: visible;
+  display: block;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  color: $textgray;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  background: transparent url('images/underline.png') center bottom -2px no-repeat;
+
+}
+.linklist {
+	padding-top: 20px;
+	ul {
+		li {
+			display: inline-block;
+			width: 220px;
+			overflow: hidden;
+			margin: 0 8px;
+			margin-bottom: 20px;
+			padding-bottom: 28px;
+			//border-bottom: 1px dotted $textgray;
+			background: transparent url('images/linklist-underline.png') center bottom no-repeat;
+			background-size: 220px auto;
+			> a:first-child {
+				display: block;
+				border: none;
+				text-decoration: none;	
+				white-space: nowrap;
+  			overflow: hidden;
+  			text-overflow: ellipsis;
+  			color: $textgray;
+  			font-family: 'Open Sans', sans-serif;
+  			font-weight: 700;
+			}
+			.editlink {
+				display: none;
+			}
+			> b {
+				display: block;
+				font-family: 'Open Sans', sans-serif;
+  			font-weight: 400;
+  			margin-bottom: 20px;
+			}
+			> a:last-child {
+				display: inline-block;
+				width: 144px;
+			}
+		}
+	}
+		
+}
+//body.page-testimonials .entry-content::after,
 body.page-gear .entry-content::after {
-	background: transparent url('images/underline-dotted.png') top center no-repeat;
+	//background: transparent url('images/underline-dotted.png') top center no-repeat;
 	height: 14px;
 	width: 80%;
 	background-size: auto 14px;
@@ -2446,7 +2568,7 @@ footer.site-footer {
 			padding-top: 22px;
 		
 			ul {
-				
+				max-width: 560px;
 				li:nth-child(4) {
 					padding-right: 0;
 				}
